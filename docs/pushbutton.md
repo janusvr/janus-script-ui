@@ -8,6 +8,7 @@ A simple interactive button.  When the user pushes the button, the ```buttondown
   * ```height``` - float, default 0.5
   * ```clicking``` - boolean, default false
   * ```active``` - boolean, default false
+  * ```accesskey``` - string, optional, default false
 
 ## Methods
   * ```button.press()``` - simulate a press of the button
