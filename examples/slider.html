@@ -1,0 +1,11 @@
+<FireBoxRoom>
+  <Assets>
+    <AssetScript src"janus-script-ui.js" />
+  </Assets>
+  <Room>
+    <Object id="sphere" js_id="floating_orb" col="red" pos="0 2.5 7" />
+    <Slider pos="0 0 5" min="0.05" value="1" max="2.5" onchange="room.objects['orb'].scale = V(this.value)" />
+  </Room>
+</FireBoxRoom>
+
+
