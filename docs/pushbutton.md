@@ -1,6 +1,6 @@
 # ```<PushButton>```
 
-A simple interactive button.  When the user pushes the button, the ```buttondown``` and ```buttonpress`` events are fired.  When the button is released, the ```buttonup``` event is fired.
+A simple interactive button.  When the user pushes the button, the ```buttondown``` and ```buttonpress``` events are fired.  When the button is released, the ```buttonup``` event is fired.
 
 ## Properties
   * ```width``` - float, default 0.5
