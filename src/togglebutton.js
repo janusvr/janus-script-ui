@@ -1,12 +1,13 @@
-room.registerElement('pushbutton', {
+room.registerElement('togglebutton', {
   width:        .5,
   length:       .5,
   height:       .5,
   clicking:     false,
   active:       false,
 
-  onactivate:   false,
-  ondeactivate: false,
+  onbuttondown:  false,
+  onbuttonpress: false,
+  onbuttonup:    false,
 
   createChildren: function() {
     this.base = room.createObject('Object', {
@@ -35,7 +36,7 @@ room.registerElement('pushbutton', {
 
     this.setButtonPos();
   },
-  activate: function() {
+  press: function() {
     this.active = !this.active;
 
     if (this.active && this.onactivate) {
@@ -52,7 +53,7 @@ room.registerElement('pushbutton', {
   onMouseDown: function(ev) {
     this.button.sync = true;
     this.clicking = true;
-    this.activate();
+    this.press();
 
     this.setState('in');
 

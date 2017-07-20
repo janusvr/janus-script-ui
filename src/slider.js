@@ -1,5 +1,5 @@
 room.registerElement('slider', {
-  clicking: false,
+  grabbing: false,
   value: 1,
   min: 0,
   max: 1,
@@ -7,9 +7,9 @@ room.registerElement('slider', {
   width: .25,
   height: .2,
 
-  onbegin:  false,
-  onchange: false,
-  onend:    false,
+  ongrabstart: false,
+  onchange:    false,
+  ongrabend:   false,
 
   createChildren: function() {
     this.base = room.createObject('Object', {
@@ -80,24 +80,24 @@ room.registerElement('slider', {
     this.setValue(foo * (this.max - this.min));
   },
   onMouseDown: function(ev) {
-    this.clicking = true;
+    this.grabbing = true;
     this.updateValueFromCursorPos(); 
     this.sounds.clickin.play();
-    if (this.onbegin) this.executeCallback(this.onbegin);
+    if (this.ongrabstart) this.executeCallback(this.ongrabstart);
     ev.preventDefault();
     ev.stopPropagation();
   },
   onMouseMove: function(ev) {
-    if (this.clicking) {
+    if (this.grabbing) {
       this.updateValueFromCursorPos(); 
       ev.stopPropagation();
     }
   },
   onMouseUp: function(ev) {
-    if (this.clicking) {
-      this.clicking = false;
+    if (this.grabbing) {
+      this.grabbing = false;
       this.sounds.clickoff.play();
-      if (this.onend) this.executeCallback(this.onend);
+      if (this.ongrabend) this.executeCallback(this.ongrabend);
       ev.stopPropagation();
     }
   },
