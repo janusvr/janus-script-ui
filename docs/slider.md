@@ -7,7 +7,6 @@ A linear slider control.  Fires a ```grabstart``` event when the user grabs the 
   * ```length``` - float, default 1
   * ```height``` - float, default .2
   * ```grabbing``` - boolean, default false
-  * ```active``` - boolean, default false
   * ```value``` - float, default 1
   * ```min``` - float, default 0
   * ```max``` - float, default 1
